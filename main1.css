@@ -1,0 +1,27 @@
+body {
+    background-color: lightblue;
+    color: green;
+    font-size: Arial;
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: green;
+}
+
+header {
+    background-color: black;
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt
+}
+
+footer {
+    background-color: black;
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+    text-align: right;
+}
+
