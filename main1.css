@@ -24,8 +24,7 @@ a:hover {
     color: red;
     text-decoration: underline;
     background-color: ;
-    font-weight: bold;
-    
+    font-weight: bold;   
     -moz-text-shadow: 0.3px 10px 10px #000000;
     text-shadow: 0.3px 10px 10px #000000;
 }
@@ -39,7 +38,14 @@ header {
     background-image: linear-gradient(to right bottom, red, Orange, Yellow, Green, Blue, Indigo, Violet);
     color: lightgreen;
     padding: 10px;
-    font-size: 16pt
+    font-size: 16pt;
+    transition: 3s;
+    text-align: left;       
+}
+
+header:hover {
+    color: red;
+    transform: scale(0.9); 
 }
 
 footer {
@@ -48,5 +54,11 @@ footer {
     padding: 10px;
     font-size: 16pt;
     text-align: right;
+    transition: 3s;
 }
 
+footer:hover {
+    color:red;
+    transform: scale(0.9); 
+
+}
