@@ -1,8 +1,11 @@
+
 body {
+    height: 100%;
     background-color: lightblue;
     color: green;
     font-size: Arial;
     margin: 0px;
+    padding: 0px;
 }
 
 a{
@@ -54,11 +57,19 @@ footer {
     padding: 10px;
     font-size: 16pt;
     text-align: right;
-    
+    transition: 3s;
+    position: relative;
+    height: 30px;
 }
+
 
 footer:hover {
     color:red;
     transform: scale(0.9); 
 
+}
+
+main {
+    min-height: 100%;
+    margin-bottom: 160px
 }
