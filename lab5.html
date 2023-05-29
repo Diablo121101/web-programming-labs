@@ -18,6 +18,39 @@
         alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
     }
 
+    function showDiff() {
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
+
+        let a = parseInt(inputA.value);
+        let b = parseInt(inputB.value);
+        let result = a - b;
+        alert('Разница ' + a + ' и ' + b + ' равна ' + result);
+
+    }
+
+    function showMult() {
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
+
+        let a = parseInt(inputA.value);
+        let b = parseInt(inputB.value);
+        let result = a * b;
+        alert('Произведение ' + a + ' и ' + b + ' равна ' + result);
+
+    }
+
+    function showDVD() {
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
+
+        let a = parseInt(inputA.value);
+        let b = parseInt(inputB.value);
+        let result = a / b;
+        alert('Деление ' + a + ' и ' + b + ' равна ' + result);
+
+    }
+
     function showAuthor() {
         let author = 'Автор страницы: \nБодрых Александр Юрьевич. \nДавайте поставим ему за эту лабораторную 5 баллов))'
         alert(author)
@@ -35,6 +68,39 @@
             width: 250px;
             background-color: #e5eaf5;
             display: inline-block;
+        }
+
+        .message1 {
+            cursor: pointer;
+            margin: 20px;
+            border: 1px solid;
+            border-radius: 7px;
+            padding: 7px;
+            height: 15px;
+            width: 250px;
+            background-color: #e5eaf5;
+        }
+
+        .message2 {
+            cursor: pointer;
+            margin: 20px;
+            border: 1px solid;
+            border-radius: 7px;
+            padding: 7px;
+            height: 15px;
+            width: 250px;
+            background-color: #e5eaf5;
+        }
+
+        .message3 {
+            cursor: pointer;
+            margin: 20px;
+            border: 1px solid;
+            border-radius: 7px;
+            padding: 7px;
+            height: 15px;
+            width: 250px;
+            background-color: #e5eaf5;
         }
     </style>
 </head>
@@ -58,8 +124,18 @@
             Узнать, кто автор страницы
         </div>
 
-        
+        <div class="message1" onclick="showDiff()">
+            Найти разность чисел
+        </div>
 
+        <div class="message2" onclick="showMult()">
+            Найти произведение
+        </div>
+
+        <div class="message3" onclick="showDVD()">
+            Найти деление
+        </div>
+        
     </main>
 
 
