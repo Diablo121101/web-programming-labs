@@ -15,6 +15,10 @@
         alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
     }
 
+    function showAuthor() {
+        let author = 'Автор страницы: \nБодрых Александр Юрьевич. \nДавайте поставим ему за эту лабораторную 5 баллов))'
+        alert(author)
+    }
 </script>
 
     <style>
@@ -33,7 +37,7 @@
 </head>
 
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
@@ -43,7 +47,7 @@
             Сколько будет 5154+7891?                    
         </div>
 
-        <div class="message">
+        <div class="message" onclick="showAuthor()">
             Узнать, кто автор страницы
         </div>
 
@@ -52,7 +56,7 @@
     </main>
 
 
-    <footer>
+    <footer onclick="showAuthor()">
         &copy; Александр Бодрых, ФБИ-14, 2 курс, 2023
     </footer>
 </body>
