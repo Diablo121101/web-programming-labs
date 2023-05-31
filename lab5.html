@@ -55,6 +55,15 @@
         let author = 'Автор страницы: \nБодрых Александр Юрьевич. \nДавайте поставим ему за эту лабораторную 5 баллов))'
         alert(author)
     }
+
+    function changeOutput(buttonNum, backColor, textColor, borderColor) {
+        let output = document.getElementById('output');
+        output.innerHTML = 'Нажата кнопка ' + buttonNum;
+        output.style.backgroundColor = backColor;
+        output.style.color = textColor;
+        output.style.border = `2px solid ${borderColor}`;
+    }
+    
 </script>
 
     <style>
@@ -102,6 +111,13 @@
             width: 250px;
             background-color: #e5eaf5;
         }
+
+         #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+        
     </style>
 </head>
 
@@ -136,6 +152,17 @@
             Найти деление
         </div>
         
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'blue', 'white')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'yellow', 'red')">
+            <input type="button" value="Кнопка 5" onclick="changeOutput(5, 'grey', 'white', 'black')">
+        </div>
+
+        
+
+        <div id='output'></div>
     </main>
 
 
