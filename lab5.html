@@ -160,11 +160,139 @@
             <input type="button" value="Кнопка 5" onclick="changeOutput(5, 'grey', 'white', 'black')">
         </div>
 
-        
+ // Создвние корзины //////////////////////////////////////////////////////////////////////////////////////////////
 
+    <h1>Корзина товаров</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Наименование</th>
+          <th>Цена за штуку</th>
+          <th>Количество</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Товар 1</td>
+          <td><span id="price1">10</span> руб.</td>
+          <td><input type="number" id="quantity1" value="0"></td>
+        </tr>
+        <tr>
+          <td>Товар 2</td>
+          <td><span id="price2">20</span> руб.</td>
+          <td><input type="number" id="quantity2" value="0"></td>
+        </tr>
+        <tr>
+          <td>Товар 3</td>
+          <td><span id="price3">30</span> руб.</td>
+          <td><input type="number" id="quantity3" value="0"></td>
+        </tr>
+        <tr>
+          <td>Товар 4</td>
+          <td><span id="price4">40</span> руб.</td>
+          <td><input type="number" id="quantity4" value="0"></td>
+        </tr>
+        <tr>
+          <td>Товар 5</td>
+          <td><span id="price5">50</span> руб.</td>
+          <td><input type="number" id="quantity5" value="0"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="calculateTotal()">Рассчитать</button>
+    <p>Итого: <span id="total">0</span> руб.</p>
+
+    <script>
+
+      function calculateTotal() {
+        
+        var price1 = document.getElementById('price1').innerHTML;
+        var price2 = document.getElementById('price2').innerHTML;
+        var price3 = document.getElementById('price3').innerHTML;
+        var price4 = document.getElementById('price4').innerHTML;
+        var price5 = document.getElementById('price5').innerHTML;
+        var quantity1 = document.getElementById('quantity1').value;
+        var quantity2 = document.getElementById('quantity2').value;
+        var quantity3 = document.getElementById('quantity3').value;
+        var quantity4 = document.getElementById('quantity4').value;
+        var quantity5 = document.getElementById('quantity5').value;
+
+        
+        var total = price1 * quantity1 + price2 * quantity2 + price3 * quantity3 + price4 * quantity4 + price5 * quantity5;
+
+        
+        document.getElementById('total').innerHTML = total;
+      }
+    </script>
+
+// Создание кругов //////////////////////////////////////////////////////////////////////////////////////////////
+    <style>
+
+      .circle {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        font-size: 50px;
+        line-height: 100px;
+        text-align: center;
+        margin: 10px;
+        cursor: pointer;
+      }
+      .circle-1 {
+        background-color: #ff4444;
+      }
+      .circle-2 {
+        background-color: #00bcd4;
+      }
+      .circle-3 {
+        background-color: #4caf50;
+      }
+      .circle-4 {
+        background-color: #ffbb33;
+      }
+      .circle-5 {
+        background-color: #795548;
+      }
+      .circle-6 {
+        background-color: #9c27b0;
+      }
+      .circle-7 {
+        background-color: #8bc34a;
+      }
+      .circle-8 {
+        background-color: #2196f3;
+      }
+      .circle-9 {
+        background-color: #f44336;
+      }
+      .circle-10 {
+        background-color: #ffc107;
+      }
+    </style>
+  
+    <div class="circle circle-1">1</div>
+    <div class="circle circle-2">2</div>
+    <div class="circle circle-3">3</div>
+    <div class="circle circle-4">4</div>
+    <div class="circle circle-5">5</div>
+    <div class="circle circle-6">6</div>
+    <div class="circle circle-7">7</div>
+    <div class="circle circle-8">8</div>
+    <div class="circle circle-9">9</div>
+    <div class="circle circle-10">10</div>
+
+    <script>
+      var circles = document.querySelectorAll('.circle');
+      circles.forEach(function(circle) {
+        circle.addEventListener('click', function() {
+          circle.style.display = 'none';
+        });
+      });
+    </script>
+ 
         <div id='output'></div>
     </main>
-
 
     <footer onclick="showAuthor()">
         &copy; Александр Бодрых, ФБИ-14, 2 курс, 2023
