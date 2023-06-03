@@ -198,6 +198,27 @@
             Цвет: <span id="color-name">Желтый</span><br>
             Сделайте двойной щелчек, чтобы сменить.
         </div>
+
+        <div 
+            id="click-me" style="width:150px; background-color:#7FDBFF; color:white; text-align:center; border-radius: 5px; box-shadow: 2px 2px 3px #999; padding:10px; position:absolute; bottom:0; left:0; cursor:pointer; transition: all 1s ease;"> Щёлкни меня 
+        </div> 
+        <script> 
+            var clickMe = document.getElementById("click-me"); 
+            var isRightSide = false; 
+            function moveBlock() { 
+                if (!isRightSide) { 
+                    clickMe.style.transform = "rotate(4turn)"; 
+                    clickMe.style.left = "calc(100% - 150px)"; 
+                    isRightSide = true; 
+                    } 
+                    else { 
+                        clickMe.style.transform = "rotate(0)"; 
+                        clickMe.style.left = "0"; 
+                        isRightSide = false; 
+                        } 
+                    } 
+                    clickMe.addEventListener("click", moveBlock); 
+        </script>
     
     </main>
     
