@@ -23,6 +23,16 @@
             padding: 20px;
             display: none;
         }
+
+        .color {
+            margin: 20px;
+            border: 1px solid;
+            border-radius: 7px;
+            padding: 7px;
+            width: 300px;
+            height: 120px;
+            z-index: 1;
+        }
     </style>
     <script>
         let number;
@@ -96,6 +106,39 @@
                 helpBtn.style.display = 'block';
             }
         }
+
+        function changeColor(div) {
+        if(div.style.backgroundColor=='yellow') { 
+            div.style.backgroundColor = 'red'; 
+            div.style.color = 'blue'; 
+            document.getElementById('color-name').innerHTML = 'красный'; 
+        } 
+        else if (div.style.backgroundColor=='red') { 
+            div.style.backgroundColor = 'blue'; 
+            div.style.color = 'white'; 
+            document.getElementById('color-name').innerHTML='синий'; 
+        } 
+        else if (div.style.backgroundColor=='blue') { 
+            div.style.backgroundColor = 'green'; 
+            div.style.color = 'red'; 
+            document.getElementById('color-name').innerHTML='зеленый'; 
+        } 
+        else if (div.style.backgroundColor=='green') { 
+            div.style.backgroundColor = 'purple'; 
+            div.style.color = 'yellow'; 
+            document.getElementById('color-name').innerHTML='фиолетовый'; 
+        } 
+        else { 
+            div.style.backgroundColor='yellow'; 
+            div.style.color = 'red'; 
+            document.getElementById('color-name').innerHTML='желтый';
+        } 
+    }
+
+
+
+
+
     </script>
 </head> 
 
@@ -149,6 +192,11 @@
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
+        </div>
+
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">Желтый</span><br>
+            Сделайте двойной щелчек, чтобы сменить.
         </div>
     
     </main>
