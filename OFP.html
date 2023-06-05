@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Основные финансовые показатели - КАМАЗ</title>
+    <meta charset="utf-8"> 
+    <link rel = stylesheet href="main2.css">
+	<script>
+		// генерация случайных чисел от 10 до 100 для примера
+		function getRandomNumber() {
+			return Math.floor(Math.random() * (100 - 10 + 1)) + 10;
+		}
+
+		window.onload = function() {
+			// генерация случайных цен для примера
+			var prices = [getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber(), getRandomNumber()];
+			// рассчет и вывод результатов на страницу
+			document.getElementById("min-price").innerHTML = Math.min(...prices);
+			document.getElementById("max-price").innerHTML = Math.max(...prices);
+			document.getElementById("stddev-price").innerHTML = standardDeviation(prices).toFixed(2);
+
+			// формула стандартного отклонения
+			function standardDeviation(values){
+			    var avg = average(values);
+
+			    var squareDiffs = values.map(function(value){
+			        var diff = value - avg;
+			        var sqrDiff = diff * diff;
+			        return sqrDiff;
+			    });
+
+			    var avgSquareDiff = average(squareDiffs);
+
+			    var stdDev = Math.sqrt(avgSquareDiff);
+			    return stdDev;
+			}
+
+			// функция для расчета среднего значения массива
+			function average(data) {
+			    var sum = data.reduce(function(sum, value){
+			        return sum + value;
+			    }, 0);
+
+			    var avg = sum / data.length;
+			    return avg;
+			}
+		}
+	</script>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+    <header>
+        <h1>Основные финансовые показатели</h1>
+        <nav>
+            <div class="kamaz-logo"></div>
+    
+            <a href="DVD.html" >Видео</a>
+            <a href="OFP.html" class="active" >Основные финансовые показатели</a>
+            <a href="contacts.html" >Контакты</a>
+            <a href="RGR.html" >О компании</a>
+        </nav>
+    </header>
+	<h1>Основные финансовые показатели - КАМАЗ</h1>
+	<p>Капитализация на конец апреля: <b>100 миллиардов рублей</b></p>
+	<p>Общее число акций <i>(депозитарных расписок)</i>, обращающихся на Московской фондовой бирже: <b>1 миллиард штук</b></p>
+	<br>
+	<table>
+		<tr>
+			<th>Дата</th>
+			<th>Цена закрытия</th>
+		</tr>
+		<tr>
+			<td>1 апреля 2022</td>
+			<td id="price-1">45</td>
+		</tr>
+		<tr>
+			<td>2 апреля 2022</td>
+			<td id="price-2">50</td>
+		</tr>
+		<tr>
+			<td>3 апреля 2022</td>
+			<td id="price-3">55</td>
+		</tr>
+		<tr>
+			<td>4 апреля 2022</td>
+			<td id="price-4">60</td>
+		</tr>
+		<tr>
+			<td>5 апреля 2022</td>
+			<td id="price-5">65</td>
+		</tr>
+		<tr>
+			<td>6 апреля 2022</td>
+			<td id="price-6">70</td>
+		</tr>
+		<tr>
+			<td>7 апреля 2022</td>
+			<td id="price-7">75</td>
+		</tr>
+		<tr>
+			<td>8 апреля 2022</td>
+			<td id="price-8">80</td>
+		</tr>
+		<tr>
+			<td>9 апреля 2022</td>
+			<td id="price-9">85</td>
+		</tr>
+		<tr>
+			<td>10 апреля 2022</td>
+			<td id="price-10">90</td>
+		</tr>
+		<tr>
+			<td>11 апреля 2022</td>
+			<td id="price-11">95</td>
+		</tr>
+		<tr>
+			<td>12 апреля 2022</td>
+			<td id="price-12">100</td>
+		</tr>
+		<tr>
+			<td>13 апреля 2022</td>
+			<td id="price-13">105</td>
+		</tr>
+		<tr>
+			<td>14 апреля 2022</td>
+			<td id="price-14">110</td>
+		</tr>
+		<tr>
+			<td>15 апреля 2022</td>
+			<td id="price-15">115</td>
+		</tr>
+		<tr>
+			<td>16 апреля 2022</td>
+			<td id="price-16">120</td>
+		</tr>
+		<tr>
+			<td>17 апреля 2022</td>
+			<td id="price-17">125</td>
+		</tr>
+		<tr>
+			<td>18 апреля 2022</td>
+			<td id="price-18">130</td>
+		</tr>
+		<tr>
+			<td>19 апреля 2022</td>
+			<td id="price-19">135</td>
+		</tr>
+		<tr>
+			<td>20 апреля 2022</td>
+			<td id="price-20">140</td>
+		</tr>
+		<tr>
+			<td>21 апреля 2022</td>
+			<td id="price-21">145</td>
+		</tr>
+		<tr>
+			<td>22 апреля 2022</td>
+			<td id="price-22">150</td>
+		</tr>
+		<tr>
+			<td>23 апреля 2022</td>
+			<td id="price-23">155</td>
+		</tr>
+		<tr>
+			<td>24 апреля 2022</td>
+			<td id="price-24">160</td>
+		</tr>
+		<tr>
+			<td>25 апреля 2022</td>
+			<td id="price-25">165</td>
+		</tr>
+		<tr>
+			<td>26 апреля 2022</td>
+			<td id="price-26">170</td>
+		</tr>
+		<tr>
+			<td>27 апреля 2022</td>
+			<td id="price-27">175</td>
+		</tr>
+		<tr>
+			<td>28 апреля 2022</td>
+			<td id="price-28">180</td>
+		</tr>
+		<tr>
+			<td>29 апреля 2022</td>
+			<td id="price-29">185</td>
+		</tr>
+		<tr>
+			<td>30 апреля 2022</td>
+			<td id="price-30">190</td>
+		</tr>
+	</table>
+	<br>
+	<p> <b><i> Минимальная цена за апрель: </i></b>  <span id="min-price"></span></p>
+	<p> <b><i> Максимальная цена за апрель:</i></b>  <span id="max-price"></span></p>
+	<p> <b><i>Среднеквадратическое отклонение цены за апрель:</i></b> <span id="stddev-price"></span></p>
+</body>
+</html>
