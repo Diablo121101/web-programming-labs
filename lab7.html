@@ -1,41 +1,157 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бодрых Александр Юрьевич. Лабораторная 7</title>
-    <link rel = stylesheet href="main1.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бодрых Александр. Лабораторная 7</title>
+<link rel="stylesheet" href="main1.css">
 
-    <script>
-        function addBlocks() {
-            let blocks = document.getElementById('blocks');
-            for (let i = 0; i < 10; i++) {
-            let block = document.createElement('div');
-            block.innerHTML = 'Блок №' + (i+1) + ':' + (2*i**2);
+<script>
+function addblocks(){
+let blocks = document.getElementById('blocks');
+for(let i = 0; i<10; i++){
+let block = document.createElement('div');
+block.innerHTML = 'блок №'+ (i + 1) + ': ' + (2 * i**2);
 
+blocks.appendChild(block);
+}
+}
+function showExchage(){
+let exchage = [79.9609, 79.3071, 78.6139, 76.8207, 76.6929,
+75.8846, 77.2041, 79.1004, 79.9798, 80.7642];
+let table = document.getElementById('dollar-exchange');
+for(let i = 0; i<exchage.length; i++){
+let tr = document.createElement('tr');
+let td = document.createElement('td');
+td.innerHTML = exchage[i];
+tr.appendChild(td);
+table.appendChild(tr);
 
-            blocks.appendChild(block);
-        }
-    }
+}
+let sum = 0;
+for(let i = 0; i<exchage.length; i++){
+sum = sum + exchage[i];
+}
+let average = sum / exchage.length;
+document.getElementById('detail').innerHTML = 'Среднее значение' + average;
+}
 
-    </script>
+function atb(){
+let colors = document.getElementById('trbl');
+for(let i = 0; i<10; i++){
+let box = document.createElement('div');
+box.style.width = '50px';
+box.style.height = '50px';
+box.style.backgroundColor = 'blue';
+box.style.opacity = i/10;
+colors.appendChild(box);
+}
+}
+function createCircles() {
+let numCurcles = document.getElementById('numCurcles').value;
+let circles = document.getElementById('circles');
+for (let i = numCurcles; i > 0; i--){
+let circle = document.createElement('div');
+circle.style.width = '50px';
+circle.style.height = '50px';
+circle.style.borderRadius = '100px';
+circle.style.textAlign = 'center';
+if (i % 2 == 0){
+circle.style.backgroundColor = 'red'
+}
+else {circle.style.backgroundColor = 'green'
+}
+circle.innerHTML = i;
+circles.appendChild(circle);
+}
+}
+function umn() {
+let b = document.getElementById('b');
+for (let i = 13; i < 34; i++){
+let n = document.createElement('div');
+n.innerHTML = i + '*' + 62 + '='+ (i*62);
+n.style.color = 'white'
+b.appendChild(n);
 
-</head>
+}
+}
+function KursAkc(){
+let data = ['27.06.2023', '28.05.2023', '29.05.2023', '30.05.2023', '31.05.2023',
+'01.06.2023', '02.06.2023', '03.06.2023', '04.06.2023', '05.06.2023' ];
+let kurs = [40.51, 41.25, 41.13, 41.04, 40.90,
+40.21, 40.12, 40.155, 39.70, 39.05];
+let table = document.getElementById('rusal');
+for(let i = 0; i < data.length; i++){
+let tr = document.createElement('tr')
+let tdData = document.createElement('td')
+tdData.innerHTML = data[i];
+tr.appendChild(tdData);
+let tdKurs = document.createElement('td')
+tdKurs.innerHTML = kurs[i];
+tr.appendChild(tdKurs);
+let tdR = document.createElement('td')
+if (i==0){
+tdR.innerHTML = '-' ;
+}
+else{
+tdR.innerHTML = (kurs[i]-kurs[i-1]).toFixed(3);
+}
+tr.appendChild(tdR);
+table.appendChild(tr);
+}
+let sum = 0;
+for(let i = 0; i < kurs.length; i++) {
+sum = sum + kurs[i];
+}
+let middle = sum / kurs.length;
+document.getElementById('middle').innerHTML = 'Среднее значение: ' + middle;
+
+let min = Math.min(...kurs);
+document.getElementById('min').innerHTML = 'Минимальное значение: '+ min;
+
+let max = Math.max(...kurs);
+document.getElementById('max').innerHTML = 'Максимальное значение: ' + max;
+}
+
+</script>
+<head>
+
 <body>
-    <header>
-        НГТУ, ФБ, Лабораторная работа 5
-    </header>
+<header>
+</header>
 
-    <main>
-        <button onclick="addBlocks()">Создавать блоки/</button>
-        <div id='blocks'></div>
+<main>
+<button onclick="addblocks()">Создать блоки</button>
+<div id="blocks"></div>
 
-    </main>
+<button onclick="showExchage()"> Курс доллара</button>
+<table border="1" id="dollar-exchange"></table>
+<div id="detail"></div>
 
-    <footer>
-        &copy; Бодрых Александр, ФБИ-14, 2 курс, 2023
-    </footer>
-    
+<button onclick="atb()">Создать полупрозрачные блоки</button>
+<div id="trbl"></div>
+
+<label>Введите количество кругов:</label>
+<input type="number" value="5" placeholder="Введите число кругов" id="numCurcles">
+<button onclick="createCircles()">зеленый/красный</button>
+<div id="circles"></div>
+
+<button onclick="umn()">Умножение на
+62</button>
+<div id="b"></div>
+
+<button onclick="KursAkc()"> Курс акций компании транспортной группа FESCO:</button>
+<table border="3" id="rusal"></table>
+<div id="middle"></div>
+<div id="min"></div>
+<div id="max" style="margin-bottom: 20px;"></div>
+
+
+</main>
+
+<footer>
+&copy; Бодрых Александр, ФБИ-14, 2 курс, 2023
+</footer>
 </body>
 </html>
